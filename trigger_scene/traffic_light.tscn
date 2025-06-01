@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b13gwvlhy0kl8"]
+
+[ext_resource type="PackedScene" uid="uid://dsvxel4wooq7a" path="res://3d_gltf_models/uploads_files_5583206_traffic-light.glb" id="1_6ucqs"]
+[ext_resource type="Script" path="res://trigger_scene/trigger_script/traffic_light.gd" id="1_oayl2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5wtda"]
+size = Vector3(116.025, 0.0854492, 21.8987)
+
+[node name="traffic" type="StaticBody3D"]
+script = ExtResource("1_oayl2")
+
+[node name="uploads_files_5583206_traffic-light" parent="." instance=ExtResource("1_6ucqs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0082531, 0, 0.165242)
+
+[node name="traffic_col_chape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.940768, -0.0034906, 0, 0.00328391, 0.99998, -57.5123, -0.00582218, 10.45)
+shape = SubResource("BoxShape3D_5wtda")
+
+[node name="traffic_col_chape2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.943061, 0.00384452, 0, -0.0131685, 0.275326, -57.5123, 0.00298679, -2.67081)
+shape = SubResource("BoxShape3D_5wtda")

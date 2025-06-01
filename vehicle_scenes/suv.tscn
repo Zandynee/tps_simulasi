@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://67hecuyqjuh5"]
+
+[ext_resource type="Script" path="res://vehicle_scenes/vehicle_scripts/suv.gd" id="1_6qi0e"]
+[ext_resource type="PackedScene" uid="uid://80rgx1cs574r" path="res://3d_gltf_models/Range Rover Sports 2018 (.GLB).glb" id="2_4rraj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aplll"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qmsw6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kxcjf"]
+size = Vector3(1, 1, 0.378906)
+
+[node name="suv" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.63556, 0)
+script = ExtResource("1_6qi0e")
+
+[node name="Range Rover Sports 2018 (_GLB)" parent="." instance=ExtResource("2_4rraj")]
+transform = Transform3D(-3.10543e-08, 0, 0.71044, 0, 0.71044, 0, -0.71044, 0, -3.10543e-08, 0.275387, -1.31655, 0.0230265)
+
+[node name="suv_coll_shape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.39372, 0, 0, 0, 1.38719, 0, 0, 0, 3.55001, 0.0514637, -0.612951, 0.0230265)
+shape = SubResource("BoxShape3D_aplll")
+
+[node name="check_front" type="Area3D" parent="."]
+
+[node name="check_front_coll" type="CollisionShape3D" parent="check_front"]
+transform = Transform3D(3.01771, 0, 0, 0, 1.40565, 0, 0, 0, 33.7533, 0.030138, -0.419426, -14.4874)
+shape = SubResource("BoxShape3D_qmsw6")
+
+[node name="dodge_box" type="Area3D" parent="."]
+transform = Transform3D(1.00162, 0, 0, 0, 1.00162, 0, 0, 0, 1.00162, 0, 0, 0)
+
+[node name="dodge_box_coll" type="CollisionShape3D" parent="dodge_box"]
+transform = Transform3D(4.29207, 0, 0, 0, 1.96694, 0, 0, 0, 34.1739, 0.0758604, -0.161268, -8.59867)
+shape = SubResource("BoxShape3D_kxcjf")
+
+[node name="left_box" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.77344, -0.0119333, 0.0519462)
+
+[node name="left_box_coll" type="CollisionShape3D" parent="left_box"]
+transform = Transform3D(2.82684, 0, 0, 0, 1.96694, 0, 0, 0, 56.166, -1.16548, -0.163655, -10.5617)
+shape = SubResource("BoxShape3D_kxcjf")
+
+[node name="right_box" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.72667, -0.0119333, 0.0519462)
+
+[node name="right_box_coll" type="CollisionShape3D" parent="right_box"]
+transform = Transform3D(2.82684, 0, 0, 0, 1.96694, 0, 0, 0, 56.166, 1.22385, -0.163655, -10.5617)
+shape = SubResource("BoxShape3D_kxcjf")
+
+[node name="brake_box" type="Area3D" parent="."]
+
+[node name="brake_box_coll" type="CollisionShape3D" parent="brake_box"]
+transform = Transform3D(1.42732, 0, 0, 0, 1.96694, 0, 0, 0, 22.2195, 0.0759091, -0.163233, -4.73486)
+shape = SubResource("BoxShape3D_kxcjf")
+
+[node name="willhit_box" type="Area3D" parent="."]
+
+[node name="willhit_box_coll" type="CollisionShape3D" parent="willhit_box"]
+transform = Transform3D(1.79398, 0, 0, 0, 1.87849, 0, 0, 0, 10.8349, 0.0222064, -0.163233, 0.0454092)
+shape = SubResource("BoxShape3D_kxcjf")

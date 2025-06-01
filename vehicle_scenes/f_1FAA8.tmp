@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://bipwbntxoyncs"]
+
+[ext_resource type="Script" path="res://vehicle_scenes/vehicle_scripts/f_1.gd" id="1_7f72u"]
+[ext_resource type="PackedScene" uid="uid://dfawg10o42mcb" path="res://3d_gltf_models/uploads_files_6149127_mclaren_mp45_2k.glb" id="1_7tox8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_00lap"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dwsdm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_83r3r"]
+size = Vector3(1, 1, 0.378906)
+
+[node name="f1" type="CharacterBody3D"]
+script = ExtResource("1_7f72u")
+
+[node name="uploads_files_6149127_mclaren_mp45_2k" parent="." instance=ExtResource("1_7tox8")]
+transform = Transform3D(-0.64366, 0, -5.62705e-08, 0, 0.64366, 0, 5.62705e-08, 0, -0.64366, 0, 0.0956804, 0)
+
+[node name="f1_coll_shape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.41814, 0, 0, 0, 0.64366, 0, 0, 0, 2.78506, 0, 0.441337, 0)
+shape = SubResource("BoxShape3D_00lap")
+
+[node name="check_front" type="Area3D" parent="."]
+
+[node name="check_front_coll" type="CollisionShape3D" parent="check_front"]
+transform = Transform3D(3.01771, 0, 0, 0, 0.776708, 0, 0, 0, 27.1879, 0.030138, 0.763536, -11.6341)
+shape = SubResource("BoxShape3D_dwsdm")
+
+[node name="dodge_box" type="Area3D" parent="."]
+transform = Transform3D(1.00162, 0, 0, 0, 1.00162, 0, 0, 0, 1.00162, 0, 0, 0)
+
+[node name="dodge_box_coll" type="CollisionShape3D" parent="dodge_box"]
+transform = Transform3D(3.13564, 0, 0, 0, 1.08685, 0, 0, 0, 34.11, 0.0758604, 0.904575, -8.47329)
+shape = SubResource("BoxShape3D_83r3r")
+
+[node name="left_box" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.77344, -0.0119333, 0.0519462)
+
+[node name="left_box_coll" type="CollisionShape3D" parent="left_box"]
+transform = Transform3D(3.2664, 0, 0, 0, 1.08685, 0, 0, 0, 45.2411, -1.06541, 0.910205, -8.48203)
+shape = SubResource("BoxShape3D_83r3r")
+
+[node name="right_box" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.72667, -0.0119333, 0.0519462)
+
+[node name="right_box_coll" type="CollisionShape3D" parent="right_box"]
+transform = Transform3D(3.2664, 0, 0, 0, 1.08685, 0, 0, 0, 45.2411, 1.17085, 0.910205, -8.48203)
+shape = SubResource("BoxShape3D_83r3r")
+
+[node name="brake_box" type="Area3D" parent="."]
+
+[node name="brake_box_coll" type="CollisionShape3D" parent="brake_box"]
+transform = Transform3D(1.52699, 0, 0, 0, 1.08685, 0, 0, 0, 20.1894, 0.0759091, 0.905098, -3.65783)
+shape = SubResource("BoxShape3D_83r3r")
+
+[node name="willhit_box" type="Area3D" parent="."]
+
+[node name="willhit_box_coll" type="CollisionShape3D" parent="willhit_box"]
+transform = Transform3D(1.79398, 0, 0, 0, 1.03798, 0, 0, 0, 8.7438, 0.0222064, 0.905098, 0.0719571)
+shape = SubResource("BoxShape3D_83r3r")

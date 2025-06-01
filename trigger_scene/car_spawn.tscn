@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ck4t1p05momyl"]
+
+[ext_resource type="Script" path="res://trigger_scene/trigger_script/car_spawn.gd" id="1_dru4n"]
+
+[node name="car_spawn" type="Node3D"]
+script = ExtResource("1_dru4n")

@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://2nmayhq28woa"
+path.s3tc="res://.godot/imported/Range Rover Sports 2018 (_TexturesCom_Plastic_CarbonFiber_1K_metallic-TexturesCom_Plastic_CarbonFiber_1K_roughness.png-42052ad6dbbf7dad660b2a7dbb6f9ab6.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "375b523b9e74d6bf8ecd266dcf219ff2"
+}
+
+[deps]
+
+source_file="res://3d_gltf_models/Range Rover Sports 2018 (_TexturesCom_Plastic_CarbonFiber_1K_metallic-TexturesCom_Plastic_CarbonFiber_1K_roughness.png"
+dest_files=["res://.godot/imported/Range Rover Sports 2018 (_TexturesCom_Plastic_CarbonFiber_1K_metallic-TexturesCom_Plastic_CarbonFiber_1K_roughness.png-42052ad6dbbf7dad660b2a7dbb6f9ab6.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

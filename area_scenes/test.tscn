@@ -1,0 +1,121 @@
+[gd_scene load_steps=8 format=3 uid="uid://6ibau24sak2g"]
+
+[ext_resource type="PackedScene" uid="uid://ck4t1p05momyl" path="res://trigger_scene/car_spawn.tscn" id="1_5nte0"]
+[ext_resource type="Script" path="res://random_scripts/camera.gd" id="1_wphvr"]
+[ext_resource type="PackedScene" uid="uid://b13gwvlhy0kl8" path="res://trigger_scene/traffic_light.tscn" id="7_80uwf"]
+[ext_resource type="Texture2D" uid="uid://cbvn17fcbvpkx" path="res://area_scenes/Perempatan MM UGM_11zon (Large).jpg" id="8_u5bka"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2auel"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wueai"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ajkkc"]
+
+[node name="test" type="Node3D"]
+
+[node name="boundaries" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="boundaries"]
+transform = Transform3D(265.127, 0, 0, 0, 265.127, 0, 0, 0, 265.127, -119.98, 5, 155.331)
+shape = SubResource("BoxShape3D_2auel")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="boundaries"]
+transform = Transform3D(275.427, 0, 0, 0, 265.127, 0, 0, 0, 270.109, -162.83, 5, -171.4)
+shape = SubResource("BoxShape3D_2auel")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="boundaries"]
+transform = Transform3D(276.145, 0, 0, 0, 265.127, 0, 0, 0, 254.461, -122.122, 5, -201.395)
+shape = SubResource("BoxShape3D_2auel")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="boundaries"]
+transform = Transform3D(265.127, 0, 0, 0, 265.127, 0, 0, 0, 265.127, 183.184, 5, -179.97)
+shape = SubResource("BoxShape3D_2auel")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="boundaries"]
+transform = Transform3D(350.603, 0, 0, 0, 265.127, 0, 0, 0, 11.6256, 219.064, 5, -13.9263)
+shape = SubResource("BoxShape3D_2auel")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="boundaries"]
+transform = Transform3D(350.603, 0, 0, 0, 265.127, 0, 0, 0, 16.2365, -164.256, 5, -12.931)
+shape = SubResource("BoxShape3D_2auel")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="boundaries"]
+transform = Transform3D(265.127, 0, 0, 0, 265.127, 0, 0, 0, 286.186, 174.915, 5, 155.331)
+shape = SubResource("BoxShape3D_2auel")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="boundaries"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 180.139, 33.1466, 0, 106.293)
+shape = SubResource("BoxShape3D_wueai")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="boundaries"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 180.139, 28.2923, 0, -130.355)
+shape = SubResource("BoxShape3D_wueai")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0852952, 0.996356, 0, -0.996356, 0.0852952, 0, 7.53885, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.898661, -0.250192, 0.360294, 0.017658, 0.841351, 0.540201, -0.438287, -0.479096, 0.760507, 30.4173, 11.9532, 88.5293)
+script = ExtResource("1_wphvr")
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.873261, 0.394291, 0.286268, -0.214213, -0.217021, 0.952373, 0.437638, -0.892993, -0.105054, 29.2893, 47.1185, 13.659)
+
+[node name="Node3D" type="Node3D" parent="DirectionalLight3D2"]
+
+[node name="traffic_light" parent="." instance=ExtResource("7_80uwf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.4222, -0.0316309, 33.4717)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5683, -0.0316309, 38.2278)
+skeleton = NodePath("../../traffic_light")
+
+[node name="Sprite3D" type="Sprite3D" parent="StaticBody3D/MeshInstance3D"]
+transform = Transform3D(50.5782, 0, 0, 0, -2.21084e-06, 50.5782, 0, -50.5782, -2.21084e-06, 5.18824, 0, -32.4226)
+texture = ExtResource("8_u5bka")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_ajkkc")
+
+[node name="car_spawn" parent="." instance=ExtResource("1_5nte0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.7168, -2.06466, 255.112)
+
+[node name="car_spawn2" parent="." instance=ExtResource("1_5nte0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.0752, -1.39997, 251.636)
+
+[node name="DirectionalLight3D3" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.873261, 0.394291, 0.286268, -0.214213, -0.217021, 0.952373, 0.437638, -0.892993, -0.105054, 286.566, 47.1185, 439.999)
+
+[node name="Node3D" type="Node3D" parent="DirectionalLight3D3"]
+
+[node name="car_spawn6" parent="." instance=ExtResource("1_5nte0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.716, -1.39997, 252.161)
+
+[node name="car_spawn3" parent="." instance=ExtResource("1_5nte0")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 31.2807, -2.06466, -287.639)
+
+[node name="car_spawn7" parent="." instance=ExtResource("1_5nte0")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 33.0504, -1.39997, -336.697)
+
+[node name="car_spawn4" parent="." instance=ExtResource("1_5nte0")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 582.976, -2.06466, 5.59751)
+
+[node name="car_spawn8" parent="." instance=ExtResource("1_5nte0")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 472.672, -1.39997, 7.758)
+
+[node name="car_spawn5" parent="." instance=ExtResource("1_5nte0")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -360.347, 0.355841, -9.86131)
+
+[node name="car_spawn9" parent="." instance=ExtResource("1_5nte0")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -360.804, 1.02053, -19.9808)
+
+[node name="traffic_light2" parent="." instance=ExtResource("7_80uwf")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.02145, -0.0316309, -22.0217)
+
+[node name="traffic_light3" parent="." instance=ExtResource("7_80uwf")]
+transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 17.0514, -0.0316309, -57.8908)
+
+[node name="traffic_light4" parent="." instance=ExtResource("7_80uwf")]
+transform = Transform3D(1.19249e-08, 0, 1, 0, 1, 0, -1, 0, 1.19249e-08, 72.7947, -0.0316309, -17.8899)
